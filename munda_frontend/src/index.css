@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Earthy Agricultural Color Palette */
+    --background: 45 30% 97%;
+    --foreground: 30 20% 15%;
+
+    --card: 45 25% 95%;
+    --card-foreground: 30 20% 15%;
+
+    --popover: 45 25% 95%;
+    --popover-foreground: 30 20% 15%;
+
+    /* Forest Green Primary */
+    --primary: 142 45% 32%;
+    --primary-foreground: 45 30% 97%;
+
+    /* Warm Earth Secondary */
+    --secondary: 35 35% 85%;
+    --secondary-foreground: 30 20% 20%;
+
+    --muted: 45 20% 90%;
+    --muted-foreground: 30 15% 45%;
+
+    /* Harvest Gold Accent */
+    --accent: 45 85% 55%;
+    --accent-foreground: 30 20% 15%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 45 30% 97%;
+
+    --border: 35 25% 82%;
+    --input: 35 25% 85%;
+    --ring: 142 45% 32%;
+
+    --radius: 0.75rem;
+
+    /* Custom Agricultural Colors */
+    --soil-brown: 25 40% 35%;
+    --leaf-green: 142 50% 40%;
+    --leaf-light: 142 40% 85%;
+    --wheat-gold: 45 80% 55%;
+    --sky-blue: 200 65% 55%;
+    --earth-red: 15 55% 45%;
+    --water-teal: 175 45% 45%;
+
+    /* Gradients */
+    --gradient-earth: linear-gradient(135deg, hsl(142 45% 32%), hsl(142 35% 45%));
+    --gradient-sunset: linear-gradient(135deg, hsl(45 85% 55%), hsl(25 70% 50%));
+    --gradient-sky: linear-gradient(180deg, hsl(200 65% 55%), hsl(200 50% 75%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30 20% 15% / 0.1);
+    --shadow-card: 0 2px 12px -2px hsl(30 20% 15% / 0.08);
+    --shadow-glow: 0 0 30px hsl(142 45% 32% / 0.2);
+
+    --sidebar-background: 142 30% 20%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 45 85% 55%;
+    --sidebar-primary-foreground: 30 20% 15%;
+    --sidebar-accent: 142 35% 28%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 142 25% 25%;
+    --sidebar-ring: 45 85% 55%;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 45 25% 90%;
+    --card: 30 15% 14%;
+    --card-foreground: 45 25% 90%;
+    --popover: 30 15% 14%;
+    --popover-foreground: 45 25% 90%;
+    --primary: 142 50% 45%;
+    --primary-foreground: 30 15% 10%;
+    --secondary: 30 20% 20%;
+    --secondary-foreground: 45 25% 90%;
+    --muted: 30 15% 18%;
+    --muted-foreground: 45 15% 60%;
+    --accent: 45 75% 50%;
+    --accent-foreground: 30 15% 10%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 45 25% 90%;
+    --border: 30 15% 22%;
+    --input: 30 15% 22%;
+    --ring: 142 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+/* Custom Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
