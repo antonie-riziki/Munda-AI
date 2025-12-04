@@ -162,8 +162,10 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
               <Sprout className="w-6 h-6 text-sidebar-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-sidebar-foreground">FarmFlow</h1>
+              <h1 className="text-lg font-bold text-sidebar-foreground">Munda AI</h1>
               <p className="text-xs text-sidebar-foreground/60">Smart Agriculture</p>
+              {/* <h1 className="text-lg font-bold text-sidebar-foreground">FarmFlow</h1>
+              <p className="text-xs text-sidebar-foreground/60">Smart Agriculture</p> */}
             </div>
           </div>
         </div>
